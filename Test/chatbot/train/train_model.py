@@ -14,13 +14,13 @@ if gpus:
         print(e)
 
 # 데이터 읽어오기
-train_file = "c:/2nd_project/Data/talk_data/영화주제 대화 말뭉치 라벨링.csv"
+train_file = "d:/2nd_project/Data/talk_data/영화주제 대화 말뭉치 라벨링.csv"
 data = pd.read_csv(train_file, delimiter=',')
 queries = data['text'].tolist()
 intents = data['label'].tolist()
 
 from chatbot.Preprocess2 import Preprocess2
-p = Preprocess2(word2index_dic='c:/2nd_project/Data/chatbot_dict_talk.bin', userdic='c:/2nd_project/Data/user_dic.txt')
+p = Preprocess2(word2index_dic='d:/2nd_project/Data/chatbot_dict_talk.bin', userdic='d:/2nd_project/Data/user_dic.txt')
 
 # 단어 시퀀스 생성
 sequences = []
@@ -117,6 +117,6 @@ with tf.device('/GPU:0'):
     print('loss: %f' % (loss))
 
 # 모델 저장
-model.save('c:/2nd_project/Model/intent_model_0807_d.h5')
+model.save('d:/2nd_project/Model/intent_model_0807_d.h5')
 
 print('완료되었습니다.')
