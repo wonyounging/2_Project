@@ -1,0 +1,4 @@
+127.0.0.1
+root
+0000
+project_chatbot
